@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{%block contenidoCambiante%}
+
+{% block body %}
+    <h2>Agregue productos a su lista</h2>
+    {% if mi_formulario.errors %}
+    {% endif %}
+
+    <form action="" method="POST" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        {% csrf_token %}
+        <table>
+            {{mi_formulario.as_table}}
+        </table>
+        <input type="submit" value="enviar" class="enviar" style="width: 15%;">
+    </form>
+    {% endblock body %}
+
+{%endblock contenidoCambiante%}
